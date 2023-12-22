@@ -40,29 +40,29 @@ Now let's look at an average graph of 50 generations: "Avrg A20 F20 NF2 AS8 S1 T
 ## Code explanation
 Since this is OOP, let's take a look at the class and it's functions.
 
-1.
+1. Movement
 - Just the starting parametres for every ant:
 ```
 class ant {
 public:
-	float x = 0, y = 0, Speed = 0, EatenFood = 0;
-	int AntName, Age = 0, Gen = 0, Angle = 0, TurningAngle = 20; 
-	std::string State;
-	sf::RectangleShape AntBody;
-	sf::Color AntColor = sf::Color(255, 255, 255, 51 * BRIGHTNESS);
-	ant() {
-		//spawn in center of window
-		x = WINDOW_WIDTH / 2;
-		y = WINDOW_HEIGHT / 2;
-		AntBody.setPosition(x, y);
-		//size, speed, angle of ant
-		AntBody.setSize(sf::Vector2f(ANT_SIZE, ANT_SIZE));
-		
-		Speed = ANT_SPEED * 60;
-		Angle = rand() % 360;
-		AntName = 0;
-		State = "Alive";
-	}
+float x = 0, y = 0, Speed = 0, EatenFood = 0;
+int AntName, Age = 0, Gen = 0, Angle = 0, TurningAngle = 20; 
+std::string State;
+sf::RectangleShape AntBody;
+sf::Color AntColor = sf::Color(255, 255, 255, 51 * BRIGHTNESS);
+ant() {
+	//spawn in center of window
+	x = WINDOW_WIDTH / 2;
+	y = WINDOW_HEIGHT / 2;
+	AntBody.setPosition(x, y);
+	//size, speed, angle of ant
+	AntBody.setSize(sf::Vector2f(ANT_SIZE, ANT_SIZE));
+	
+	Speed = ANT_SPEED * 60;
+	Angle = rand() % 360;
+	AntName = 0;
+	State = "Alive";
+}
 ```
 
   - Move function which makes the ant move randomly in an angle cone if there is no food near.
@@ -82,17 +82,18 @@ void AntMove(std::vector<food>& Food, float sec) { //ant updates position and an
   - However, if there's food then we cycle through all the food and find the coordinates of the closest one.
 ```
 float shortest_distance = SMELL_RANGE;
-			if (Food.size() > 0) {
-				for (auto nearbyFood = Food.begin(); nearbyFood != Food.end(); nearbyFood++) {
-					tempX = nearbyFood->x;
-					tempY = nearbyFood->y;
-					nearbyFood->distance = sqrt((tempX - x) * (tempX - x) + (tempY - y) * (tempY - y)); //find nearest food for ant
-					if (nearbyFood->distance < shortest_distance) {//save the coords for the closest food to the ant
-						shortest_distance = nearbyFood->distance;
-						FoodX = nearbyFood->x;
-						FoodY = nearbyFood->y;
-					}
-				}
+if (Food.size() > 0) {
+	for (auto nearbyFood = Food.begin(); nearbyFood != Food.end(); nearbyFood++) {
+		tempX = nearbyFood->x;
+		tempY = nearbyFood->y;
+		nearbyFood->distance = sqrt((tempX - x) * (tempX - x) + (tempY - y) * (tempY - y)); //find nearest food for ant
+		if (nearbyFood->distance < shortest_distance) {//save the coords for the closest food to the ant
+			shortest_distance = nearbyFood->distance;
+			FoodX = nearbyFood->x;
+			FoodY = nearbyFood->y;
+		}
+	}
+}
 ```
   - Then the ant locates in which quarter of it's circle vision the food is located in and accordingly finds the angle facing that quarter.
 ```
@@ -118,7 +119,7 @@ if (shortest_distance < SMELL_RANGE) {//ant smells closest food in range to find
   Angle = rand() % 90 + Quarter; //direct the ant towards the food
 }
 ```
-2.
+2. Eating
 - Next comes the function for when the ant finds the food.
 - Using the SFML function: .getGlobalBounds().intersects
 > **.intersects()** This overload returns the overlapped rectangle in the intersection parameter.
@@ -128,22 +129,29 @@ True if rectangles overlap, false otherwise
 - Then we increase the counter of EatenFood and randomly generate more food and push back the food into the vector.
 ```
 void AntEat(std::vector<food>& checkFoodVector) { // ant eat food
-		std::vector<food> AliveFood;
-		for (auto checkFood = checkFoodVector.begin(); checkFood != checkFoodVector.end(); checkFood++) {
-			if (AntBody.getGlobalBounds().intersects(checkFood->FoodBody.getGlobalBounds())) {
-				EatenFood++;
-				//eaten food disappears and spawns more food
-				int FoodSpawn = rand() % (NEW_FOOD + 1);
-				for (int i = 0; i < FoodSpawn; i++) {
-					food Apple;
-					AliveFood.push_back(Apple);
-				}
-			}
-			else {
-				AliveFood.push_back(*checkFood); //put non-eaten food in vector
-			}
+std::vector<food> AliveFood;
+for (auto checkFood = checkFoodVector.begin(); checkFood != checkFoodVector.end(); checkFood++) {
+	if (AntBody.getGlobalBounds().intersects(checkFood->FoodBody.getGlobalBounds())) {
+		EatenFood++;
+		//eaten food disappears and spawns more food
+		int FoodSpawn = rand() % (NEW_FOOD + 1);
+		for (int i = 0; i < FoodSpawn; i++) {
+			food Apple;
+			AliveFood.push_back(Apple);
 		}
+	}
+	else {
+		AliveFood.push_back(*checkFood); //put non-eaten food in vector
+	}
+}
 ```
+
+## Conclusion
+This is one of my first attempts of OOP and I achieved the goals at mind that I wanted. 
+The simulation itself is quite interesting because there has to be the right number of ants and food for it to be a stable population over generations.
+I'm sure further data analytical and statistical work can be done to analyze the data. Especially, with recently aqcuired statistical skills it would be interesting to find the best values and determine the statistical model.
+
+
 
 
 
