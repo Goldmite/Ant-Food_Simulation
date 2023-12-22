@@ -1,0 +1,62 @@
+ITERATION: 1
+Ant: 1 Dead Food: 0
+Ant: 2 Alive Food: 1
+Ant: 3 Dead Food: 0
+Ant: 4 Alive Food: 2
+Ant: 5 Dead Food: 0
+Ant: 6 Dead Food: 0
+ITERATION: 2
+Ant: 1 Dead Food: 0
+Ant: 2 Alive Food: 1
+ITERATION: 3
+Ant: 1 Alive Food: 1
+Ant: 2 Dead Food: 0
+Ant: 3 Alive Food: 1
+Ant: 4 Alive Food: 1
+Ant: 5 Alive Food: 2
+Ant: 6 Alive Food: 1
+ITERATION: 4
+Ant: 1 Alive Food: 2
+Ant: 2 Alive Food: 1
+ITERATION: 5
+Ant: 1 Dead Food: 0
+Ant: 2 Alive Food: 4
+Ant: 3 Alive Food: 4
+Ant: 4 Alive Food: 3
+Ant: 5 Alive Food: 2
+Ant: 6 Alive, Birth Food: 5
+Ant: 7 Alive Food: 2
+Ant: 8 Alive Food: 2
+Ant: 9 Alive Food: 1
+Ant: 10 Alive Food: 3
+Ant: 11 Alive Food: 4
+ITERATION: 6
+Ant: 1 Alive Food: 2
+Ant: 2 Alive Food: 1
+Ant: 3 Alive Food: 2
+ITERATION: 7
+Ant: 1 Alive Food: 2
+Ant: 2 Dead Food: 0
+Ant: 3 Alive Food: 2
+Ant: 4 Alive Food: 4
+Ant: 5 Alive Food: 2
+Ant: 6 Alive Food: 4
+ITERATION: 8
+Ant: 1 Dead Food: 0
+Ant: 2 Alive Food: 2
+Ant: 3 Alive Food: 1
+Ant: 4 Alive Food: 2
+Ant: 5 Alive Food: 3
+Ant: 6 Alive Food: 1
+Ant: 7 Alive Food: 2
+Ant: 8 Alive Food: 4
+ITERATION: 9
+Ant: 1 Alive Food: 1
+Ant: 2 Alive Food: 3
+Ant: 3 Dead Food: 0
+ITERATION: 10
+Ant: 1 Dead Food: 0
+Ant: 2 Alive Food: 1
+Ant: 3 Dead Food: 0
+Ant: 4 Alive Food: 1
+Ant: 5 Alive Food: 2

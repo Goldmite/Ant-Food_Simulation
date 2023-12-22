@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Generations">
+      <UniqueIdentifier>{23431c34-749d-444a-851b-284e17cc2fb1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ArtAnt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Gen_001.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_002.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_003.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_004.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_005.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_006.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_007.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_008.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_009.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_010.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_011.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_012.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_013.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_014.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_015.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_016.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="StartData.txt" />
+    <Text Include="Gen_017.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_018.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_019.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_020.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_021.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_022.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_023.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_024.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+    <Text Include="Gen_025.txt">
+      <Filter>Source Files\Generations</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
